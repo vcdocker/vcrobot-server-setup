@@ -9,6 +9,8 @@ curl -L https://github.com/vcdocker/docker-traefik/archive/2.0.0.tar.gz | tar -x
 docker swarm init
 docker network create --driver=overlay --attachable vcrobot
 
+sudo apt install apache2-utils -y
+
 echo 'export VC_USER=admin' >> ~/.bashrc && export VC_USER=admin
 echo 'export VC_PASSWORD=secret' >> ~/.bashrc && export VC_PASSWORD=secret
 echo 'export VC_BASIC_AUTH=$(htpasswd -nb $VC_USER $VC_PASSWORD)' >> ~/.bashrc && export VC_BASIC_AUTH=$(htpasswd -nb $VC_USER $VC_PASSWORD)
