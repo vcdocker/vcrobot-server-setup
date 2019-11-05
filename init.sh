@@ -4,17 +4,18 @@ curl -sL https://raw.githubusercontent.com/vcdocker/vcrobot-server-setup/master/
 
 mkdir ~/.vcrobot && cd ~/.vcrobot
 
-curl -L https://github.com/vcdocker/docker-traefik/archive/1.0.0.tar.gz | tar -xzk --strip-components=1 -C $(pwd)
+curl -L https://github.com/vcdocker/docker-traefik/archive/2.0.0.tar.gz | tar -xzk --strip-components=1 -C $(pwd)
 
 docker swarm init
 docker network create --driver=overlay --attachable vcrobot
 
-export PORTAINER_DOMAIN=portainer.domain.com
+export VC_USER=admin
+export VC_PASSWORD=secret
+export VC_BASIC_AUTH=$(htpasswd -nb $VC_USER $VC_PASSWORD)
 export ACME_EMAIL=dev@vicoders.com
 export TRAEFIK_DEBUGE=true
 export ENABLE_TRAEFIK_API=true
 export ENABLE_TRAEFIK_API_DASHBOARD=true
-export ENABLE_TRAEFIK_API_INSECURE=true
 export ENABLE_TRAEFIK_CERT_RESOLVER=staging
 export ENABLE_TRAEFIK_ACCESS_LOG=true
 
