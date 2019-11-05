@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -sL https://raw.githubusercontent.com/vcdocker/vcrobot-server-setup/master/install/docker/19.03.sh | sh
+# curl -sL https://raw.githubusercontent.com/vcdocker/vcrobot-server-setup/master/install/docker/19.03.sh | sh
 
 mkdir ~/.vcrobot && cd ~/.vcrobot
 
