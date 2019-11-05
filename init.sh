@@ -4,7 +4,7 @@ curl -sL https://raw.githubusercontent.com/vcdocker/vcrobot-server-setup/master/
 
 mkdir ~/.vcrobot && cd ~/.vcrobot
 
-curl -L https://github.com/vcdocker/docker-traefik/archive/2.0.zip | tar -xzk --strip-components=1 -C $(pwd)
+curl -L https://github.com/vcdocker/docker-traefik/archive/1.0.0.tar.gz | tar -xzk --strip-components=1 -C $(pwd)
 
 docker swarm init
 docker network create --driver=overlay --attachable vcrobot
